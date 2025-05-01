@@ -226,7 +226,7 @@ function Home(props) {
       <form onSubmit={handleSubmit}>
         <Flex className="content-wrapper" maxW="1200px" mx="auto" gap={6} align="stretch">
           {/* Input Column */}
-          <Box flex={1} bg={useColorModeValue('white', 'gray.800')} borderRadius="lg" boxShadow="md" p={6} display="flex" flexDirection="column" minHeight="480px" height="480px">
+          <Box flex={1} bg={useColorModeValue('brand.50', 'brand.700')} borderRadius="lg" boxShadow="md" p={6} display="flex" flexDirection="column" minHeight="480px" height="480px">
             <Heading as="h2" size="md" mb={4} color={useColorModeValue('#111', 'gray.200')} fontWeight="bold">Summarizer Tool ✨</Heading>
             <Textarea
               ref={textareaRef}
@@ -238,7 +238,7 @@ function Home(props) {
               onChange={handleTextChange}
               resize="none"
               mb={2}
-              bg={useColorModeValue('white', 'gray.800')}
+              bg={useColorModeValue('brand.50', 'brand.700')}
               color={useColorModeValue('gray.800', 'gray.100')}
             />
             <Text fontSize="sm" color="gray.500" textAlign="right" mb={2}>{charCount}/{MAX_CHARS} characters</Text>
@@ -278,9 +278,9 @@ function Home(props) {
           </Box>
 
           {/* Output Column */}
-          <Box flex={1} bg={useColorModeValue('white', 'gray.800')} borderRadius="lg" boxShadow="md" p={6} display="flex" flexDirection="column" minHeight="480px" height="480px">
+          <Box flex={1} bg={useColorModeValue('brand.50', 'brand.700')} borderRadius="lg" boxShadow="md" p={6} display="flex" flexDirection="column" minHeight="480px" height="480px">
             <Heading as="h2" size="md" mb={4} color={useColorModeValue('gray.700', 'gray.200')}>Summarized Content 🔃</Heading>
-            <Box bg={useColorModeValue('brand.50', 'brand.700')} borderRadius="md" p={4} mb={4} overflowY="auto" height="300px">
+            <Box bg={useColorModeValue('white', 'gray.800')} borderRadius="md" p={4} mb={4} overflowY="auto" height="300px">
               {pending ? <Loader /> : formattedSummary}
             </Box>
             <Flex gap={4} justify="center" mt={6}>
@@ -547,7 +547,7 @@ function App() {
       <Box minH="100vh" display="flex" flexDirection="column" bg={useColorModeValue('gray.100', 'gray.900')}>
         <Flex as="nav" align="center" justify="space-between" px={6} py={4} bg={useColorModeValue('white', 'gray.800')} boxShadow="sm" position="fixed" top={0} left={0} right={0} zIndex={1000}>
           <Flex align="center" fontWeight="bold" fontSize="xl" color={useColorModeValue('gray.700', 'white')}>
-            <Box as={Link} to="/" display="flex" alignItems="center" _hover={{ textDecoration: 'none' }}>
+            <Box as={Link} to="/" display="flex" alignItems="center" _hover={{ textDecoration: 'none', color: 'blue.400' }}>
               <Logo />
               <Box as="span" ml={2}>TLDR.ai</Box>
             </Box>
