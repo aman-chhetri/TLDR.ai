@@ -24,7 +24,7 @@ function About() {
     <Box pt={15} pb={10} textAlign="center" maxW="3xl" mx="auto">
       <Heading as="h1" size="2xl" mb={4} color={useColorModeValue('gray.800', 'white')}>About TLDR.ai</Heading>
       <Text fontSize="lg" color={useColorModeValue('gray.500', 'gray.300')} mb={8}>
-        <b>TLDR.ai</b> is a modern, AI-powered text summarization tool. Effortlessly condense long articles, blogs, research papers, or documents into concise, easy-to-read summaries. Whether you paste text or upload files, TLDR.ai helps you save time and focus on what matters most.
+        <b>TLDR.ai</b> is a modern, AI-powered text summarization tool. Effortle condense long articles, blogs, research papers, or documents into concise, easy-to-read summaries. Whether you paste text or upload files, TLDR.ai helps you save time and focus on what matters most.
       </Text>
       <Box textAlign="left" bg={useColorModeValue('brand.50', 'brand.700')} borderRadius="lg" p={6} mb={6} boxShadow="md">
         <Heading as="h2" size="md" mb={3} color={useColorModeValue('gray.700', 'gray.200')}>Key Features</Heading>
