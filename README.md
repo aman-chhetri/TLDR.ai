@@ -1,12 +1,16 @@
-# TLDR.ai – AI-Powered Text Summarizer
+# TLDR.ai – AI Powered Text Summarizer ✨
 
-Effortlessly condense long articles, blogs, research papers, or documents into concise, easy-to-read summaries. TLDR.ai is a modern, AI-powered text summarization tool built with React, Chakra UI, and OpenRouter API.
-
-![TLDR.ai Screenshot](screenshot.png) <!-- (Add a screenshot if you want) -->
+A modern AI-powered text summarization tool that effortlessly condenses articles, blogs, research papers, and documents into clear, easy-to-read summaries.
 
 ---
+For a quick Demo Video: [Click here!](https://drive.google.com/file/d/1yHa6raKwe2JkNPh4Ao1bxJT3JR8dq_RL/view?usp=drive_link)
 
-## ✨ Features
+![TLDR.ai Homepage](assets/homepage.png) 
+
+You can check out the deployed app here: [TLDR.ai](https://text-summarizer-seven-ecru.vercel.app/)
+
+---
+### 💡 **Features**
 
 - **AI Summarization:** Get concise summaries of any text using advanced AI models via the OpenRouter API (DeepSeek-R1-Zero).
 - **File Upload:** Supports `.txt`, `.pdf`, and `.docx` files. Extracts and summarizes content from your documents.
@@ -18,7 +22,7 @@ Effortlessly condense long articles, blogs, research papers, or documents into c
 
 ---
 
-## 📦 Tech Stack
+### 📦 **Tech Stack**
 
 - **Frontend:** [React](https://react.dev/) (with [Vite](https://vitejs.dev/))
 - **UI:** [Chakra UI](https://chakra-ui.com/) & [React Icons](https://react-icons.github.io/react-icons/)
@@ -29,22 +33,22 @@ Effortlessly condense long articles, blogs, research papers, or documents into c
 
 ---
 
-## 🚀 Getting Started
+### 🚀 **Getting Started**
 
-### 1. **Clone the repository**
+#### 1. **Clone the repository**
 
 ```bash
 git clone https://github.com/yourusername/text-summarizer.git
 cd text-summarizer
 ```
 
-### 2. **Install dependencies**
+#### 2. **Install dependencies**
 
 ```bash
 npm install
 ```
 
-### 3. **Set up environment variables**
+#### 3. **Set up environment variables**
 
 Create a `.env` file in the root directory and add your OpenRouter API key:
 
@@ -53,7 +57,7 @@ VITE_OPENROUTER_API_KEY=your_openrouter_api_key
 ```
 
 
-### 4. **Run the development server**
+#### 4. **Run the development server**
 
 ```bash
 npm run dev
@@ -63,28 +67,33 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## 🗂️ Project Structure
+### 🗂️ **Project Structure**
 
 ```
 src/
-  App.jsx              # Main app with routing, layout, and all pages
-  main.jsx             # Entry point, Chakra UI theme, router setup
-  index.css            # Custom styles
-  components/
-    Logo.jsx           # SVG logo component
-    Loader.jsx         # Loader/spinner for async actions
-    TextSummarizer.jsx # (Legacy/optional) Summarizer component
+  [App.jsx] -> Main app with routing, layout, and pages
+  [main.jsx] -> Entry point, Chakra UI, router setup
+  [index.css] -> Custom styles components
+
+src/components/ 
+    [Logo.jsx] -> SVG logo component
+    [Loader.jsx] -> Loader/spinner for async actions
+    [TextSummarizer.jsx] -> Summarizer component
 ```
+---
+### 🤝 **Feedback and Contribution** 
 
+It is publicly open for any contribution. Bugfixes, new features, and extra modules are welcome.
 
-## 📬 Connect
-
-- [Twitter](https://twitter.com/iamamanchhetri)
-- [GitHub](https://github.com/aman-chhetri)
-- [LinkedIn](https://linkedin.com/in/amankshetri)
+- To contribute to code: Fork the repo, push your changes to your fork, and submit a pull request.
+- To report a bug: If something does not work, please report it using [GitHub Issues](https://github.com/aman-chhetri/TLDR.ai/issues).
 
 ---
+### 📬 **Connect**
 
-## 🧡 License
+- Email: chhetryaman3@gmail.com
+- Twitter: [@iamamanchhetri](https://twitter.com/iamamanchhetri) 
+- Website: [Portfolio](https://amankshetri.com.np)
+- LinkedIn: [@amankshetri](https://linkedin.com/in/amankshetri)
 
-MIT 
+<div align="center">© 2025 Aman Kshetri 👨‍💻</div>
