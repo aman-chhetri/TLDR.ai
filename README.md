@@ -3,7 +3,13 @@
 A modern AI-powered text summarization tool that effortlessly condenses articles, blogs, research papers, and documents into clear, easy-to-read summaries.
 
 ---
-For a quick Demo Video: [Click here!](https://drive.google.com/file/d/1yHa6raKwe2JkNPh4Ao1bxJT3JR8dq_RL/view?usp=drive_link)
+### 📖 **Overview**
+`TLDR.ai` is a modern web application that automatically summarizes long-form text content into concise, readable summaries. The application allows users to input text directly or upload documents in various formats (TXT, PDF, DOCX). It leverages the DeepSeek-R1-Zero AI model through the OpenRouter API to generate high-quality summaries efficiently.
+
+The application name `"TLDR" stands for "Too Long; Didn't Read"` - a common internet acronym that perfectly captures the application's purpose of condensing lengthy content into digestible summaries.
+
+---
+To see a Demo Video: [Click here!](https://drive.google.com/file/d/1yHa6raKwe2JkNPh4Ao1bxJT3JR8dq_RL/view?usp=drive_link)
 
 ![TLDR.ai Homepage](assets/homepage.png) 
 
