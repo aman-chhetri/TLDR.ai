@@ -9,7 +9,7 @@ A modern AI-powered text summarization tool that effortlessly condenses articles
 The application name `"TLDR" stands for "Too Long; Didn't Read"` - a common internet acronym that perfectly captures the application's purpose of condensing lengthy content into digestible summaries.
 
 ---
-To see a Demo Video: [Click here!](https://drive.google.com/file/d/1yHa6raKwe2JkNPh4Ao1bxJT3JR8dq_RL/view?usp=drive_link)
+To see a Demo Video: [Click here!](https://drive.google.com/file/d/14E3znpa1STYyNmBrkbtDQXv5_tWpiBfU/view?usp=drive_link)
 
 ![TLDR.ai Homepage](assets/homepage.png) 
 
