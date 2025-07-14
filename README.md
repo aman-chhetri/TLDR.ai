@@ -4,7 +4,7 @@ A modern AI-powered text summarization tool that effortlessly condenses articles
 
 ---
 ### 📖 **Overview**
-`TLDR.ai` is a modern web application that automatically summarizes long-form text content into concise, readable summaries. The application allows users to input text directly or upload documents in various formats (TXT, PDF, DOCX). It leverages the DeepSeek-R1-Zero AI model through the OpenRouter API to generate high-quality summaries efficiently.
+`TLDR.ai` is a modern web application that automatically summarizes long-form text content into concise, readable summaries. The application allows users to input text directly or upload documents in various formats (TXT, PDF, DOCX). It now leverages the Google Gemini API to generate high-quality summaries efficiently.
 
 The application name `"TLDR" stands for "Too Long; Didn't Read"` - a common internet acronym that perfectly captures the application's purpose of condensing lengthy content into digestible summaries.
 
@@ -18,7 +18,7 @@ You can check out the deployed app here: [TLDR.ai](https://text-summarizer-seven
 ---
 ### 💡 **Features**
 
-- **AI Summarization:** Get concise summaries of any text using advanced AI models via the OpenRouter API (DeepSeek-R1-Zero).
+- **AI Summarization:** Get concise summaries of any text using advanced AI models via the Google Gemini API.
 - **File Upload:** Supports `.txt`, `.pdf`, and `.docx` files. Extracts and summarizes content from your documents.
 - **Character Counter:** Live character count with a 10,000 character limit.
 - **Copy & Download:** Copy the summary to clipboard or download as a `.txt` file.
@@ -34,7 +34,7 @@ You can check out the deployed app here: [TLDR.ai](https://text-summarizer-seven
 - **UI:** [Chakra UI](https://chakra-ui.com/) & [React Icons](https://react-icons.github.io/react-icons/)
 - **Routing:** [react-router-dom](https://reactrouter.com/)
 - **PDF/DOCX Parsing:** [pdfjs-dist](https://github.com/mozilla/pdf.js/), [mammoth](https://github.com/mwilliamson/mammoth.js)
-- **API:** [OpenRouter API](https://openrouter.ai/) (DeepSeek-R1-Zero model)
+- **API:** [Google Gemini API](https://ai.google.dev/gemini-api/docs)
 
 
 ---
@@ -56,10 +56,10 @@ npm install
 
 #### 3. **Set up environment variables**
 
-Create a `.env` file in the root directory and add your OpenRouter API key:
+Create a `.env` file in the root directory and add your Gemini API key:
 
 ```
-VITE_OPENROUTER_API_KEY=your_openrouter_api_key
+VITE_GEMINI_API_KEY=your_gemini_api_key
 ```
 
 

@@ -31,32 +31,25 @@ const TextSummarizer = () => {
     setIsLoading(true)
     try {
       const response = await axios.post(
-        'https://openrouter.ai/api/v1/chat/completions',
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`,
         {
-          model: 'deepseek/deepseek-r1-zero:free',
-          messages: [
+          contents: [
             {
-              role: 'user',
-              content: `Please summarize the following text in a concise way: ${text}`,
+              parts: [
+                { text: `Please summarize the following text in a concise way: ${text}` },
+              ],
             },
           ],
         },
         {
           headers: {
-            Authorization: `Bearer ${import.meta.env.VITE_OPENROUTER_API_KEY}`,
+            'Content-Type': 'application/json',
           },
         }
       )
-      const rawSummary = response.data.choices[0].message.content
-      const cleanedSummary = rawSummary
-        .replace(/\\boxed\{\s*"/g, '')
-        .replace(/"\s*\}/g, '')
-        .replace(/\\boxed\{/g, '')
-        .replace(/\}/g, '')
-        .replace(/^"/, '')
-        .replace(/"$/, '')
-        .trim()
-      setSummary(cleanedSummary)
+      // Gemini API response parsing
+      const rawSummary = response.data.candidates?.[0]?.content?.parts?.[0]?.text || 'No summary found.'
+      setSummary(rawSummary.trim())
     } catch (error) {
       toast({
         title: 'Error',

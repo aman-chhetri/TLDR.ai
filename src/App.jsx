@@ -17,7 +17,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url
 ).toString();
 
-const key = import.meta.env.VITE_OPENROUTER_API_KEY;
+const key = import.meta.env.VITE_GEMINI_API_KEY;
 
 function About() {
   return (
@@ -29,7 +29,7 @@ function About() {
       <Box textAlign="left" bg={useColorModeValue('brand.50', 'brand.700')} borderRadius="lg" p={6} mb={6} boxShadow="md">
         <Heading as="h2" size="md" mb={3} color={useColorModeValue('gray.700', 'gray.200')}>Key Features</Heading>
         <ul style={{ marginLeft: '1.5em', color: useColorModeValue('#444', '#e0e3ea') }}>
-          <li>✨ <b>AI Summarization</b>: Get concise summaries of any text using advanced AI models via the OpenRouter API powered by the <b>(DeepSeek-R1-Zero)</b> model.</li>
+          <li>✨ <b>AI Summarization</b>: Get concise summaries of any text using advanced AI models via the Google Gemini API powered by the <b>(DeepSeek-R1-Zero)</b> model.</li>
           <li>📄 <b>File Upload</b>: Supports .txt, .pdf, and .docx files. Extracts and summarizes content from your documents.</li>
           <li>🌓 <b>Dark/Light Mode</b>: Toggle between beautiful dark and light themes for comfortable reading.</li>
           <li>📱 <b>Responsive Design</b>: Enjoy a seamless experience on desktop, tablet, or mobile.</li>
@@ -42,7 +42,7 @@ function About() {
         <ul style={{ marginLeft: '1.5em', color: useColorModeValue('#444', '#e0e3ea') }}>
           <li>⚛️ <b>React</b> (with Vite) for a fast, modern frontend</li>
           <li>💅 <b>Chakra UI</b> for accessible, beautiful components and theming</li>
-          <li>🧠 <b>OpenRouter API</b> for state-of-the-art AI summarization (using <b>DeepSeek (deepseek-r1-zero:free)</b> model)</li>
+          <li>🧠 <b>Google Gemini API</b> for state-of-the-art AI summarization (using <b>DeepSeek (deepseek-r1-zero:free)</b> model)</li>
           <li>📦 <b>pdfjs-dist</b> and <b>mammoth</b> for PDF and DOCX parsing in the browser</li>
           <li>🌐 <b>react-router-dom</b> for smooth navigation</li>
         </ul>
@@ -151,19 +151,18 @@ function Home(props) {
     setPending(true);
     try {
       const response = await fetch(
-        "https://openrouter.ai/api/v1/chat/completions",
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,
         {
           method: "POST",
           headers: {
-            Authorization: `Bearer ${key}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            model: "deepseek/deepseek-r1-zero:free",
-            messages: [
+            contents: [
               {
-                role: "user",
-                content: prompt,
+                parts: [
+                  { text: prompt },
+                ],
               },
             ],
           }),
@@ -173,20 +172,8 @@ function Home(props) {
         throw new Error("API request failed");
       }
       const data = await response.json();
-      const cleanedSummary = data.choices[0].message.content
-        .replace(/\\boxed\{\s*"/g, '')
-        .replace(/"\s*\}/g, '')
-        .replace(/\\boxed\{/g, '')
-        .replace(/\}/g, '')
-        .replace(/^"/, '')
-        .replace(/"$/, '')
-        .replace(/^```/g, '')
-        .replace(/```$/g, '')
-        .replace(/^text\s*/g, '')
-        .replace(/\s*text\s*$/g, '')
-        .replace(/\s*text\s*/g, ' ')
-        .trim();
-      setSummary(cleanedSummary);
+      const rawSummary = data.candidates?.[0]?.content?.parts?.[0]?.text || 'No summary found.';
+      setSummary(rawSummary.trim());
     } catch (error) {
       toast({ status: 'error', title: 'Failed to summarize', description: 'Check console for details.' });
     } finally {
@@ -307,7 +294,7 @@ function FAQ() {
     },
     {
       q: 'Is my data stored?',
-      a: 'No, your text and files are never stored. Summaries are generated in real-time using the OpenRouter API and are not saved.'
+      a: 'No, your text and files are never stored. Summaries are generated in real-time using the Google Gemini API and are not saved.'
     },
     {
       q: 'How accurate are the summaries?',
@@ -476,19 +463,18 @@ function App() {
     setPending(true);
     try {
       const response = await fetch(
-        "https://openrouter.ai/api/v1/chat/completions",
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,
         {
           method: "POST",
           headers: {
-            Authorization: `Bearer ${key}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            model: "deepseek/deepseek-r1-zero:free",
-            messages: [
+            contents: [
               {
-                role: "user",
-                content: prompt,
+                parts: [
+                  { text: prompt },
+                ],
               },
             ],
           }),
@@ -498,20 +484,8 @@ function App() {
         throw new Error("API request failed");
       }
       const data = await response.json();
-      const cleanedSummary = data.choices[0].message.content
-        .replace(/\\boxed\{\s*"/g, '')
-        .replace(/"\s*\}/g, '')
-        .replace(/\\boxed\{/g, '')
-        .replace(/\}/g, '')
-        .replace(/^"/, '')
-        .replace(/"$/, '')
-        .replace(/^```/g, '')
-        .replace(/```$/g, '')
-        .replace(/^text\s*/g, '')
-        .replace(/\s*text\s*$/g, '')
-        .replace(/\s*text\s*/g, ' ')
-        .trim();
-      setSummary(cleanedSummary);
+      const rawSummary = data.candidates?.[0]?.content?.parts?.[0]?.text || 'No summary found.';
+      setSummary(rawSummary.trim());
     } catch (error) {
       toast({ status: 'error', title: 'Failed to summarize', description: 'Check console for details.' });
     } finally {
